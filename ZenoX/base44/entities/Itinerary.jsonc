@@ -1,0 +1,210 @@
+{
+  "name": "Itinerary",
+  "type": "object",
+  "properties": {
+    "query": {
+      "type": "string",
+      "description": "The original natural-language travel request from the user"
+    },
+    "destination": {
+      "type": "string",
+      "description": "Primary destination name"
+    },
+    "title": {
+      "type": "string",
+      "description": "A catchy title for the trip"
+    },
+    "summary": {
+      "type": "string",
+      "description": "Short narrative overview of the trip"
+    },
+    "duration_days": {
+      "type": "number",
+      "description": "Number of days in the itinerary"
+    },
+    "budget_currency": {
+      "type": "string",
+      "description": "ISO currency code, e.g. USD"
+    },
+    "budget_total": {
+      "type": "number",
+      "description": "Estimated total trip cost"
+    },
+    "budget_breakdown": {
+      "type": "array",
+      "description": "Budget breakdown by category",
+      "items": {
+        "type": "object",
+        "properties": {
+          "category": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "number"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "constraints": {
+      "type": "object",
+      "description": "Extracted trip constraints",
+      "properties": {
+        "travelers": {
+          "type": "number"
+        },
+        "budget_limit": {
+          "type": "string"
+        },
+        "dates": {
+          "type": "string"
+        },
+        "preferences": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "weather": {
+      "type": "array",
+      "description": "Daily weather forecast for the destination",
+      "items": {
+        "type": "object",
+        "properties": {
+          "day": {
+            "type": "number"
+          },
+          "date": {
+            "type": "string"
+          },
+          "condition": {
+            "type": "string"
+          },
+          "temp_high": {
+            "type": "number"
+          },
+          "temp_low": {
+            "type": "number"
+          },
+          "icon": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "days": {
+      "type": "array",
+      "description": "Day-by-day plan",
+      "items": {
+        "type": "object",
+        "properties": {
+          "day": {
+            "type": "number"
+          },
+          "title": {
+            "type": "string"
+          },
+          "theme": {
+            "type": "string"
+          },
+          "activities": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "time": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "location": {
+                  "type": "string"
+                },
+                "duration": {
+                  "type": "string"
+                },
+                "cost": {
+                  "type": "number"
+                },
+                "category": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "dining": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "meal": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "cuisine": {
+                  "type": "string"
+                },
+                "price_range": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "accommodation": {
+            "type": "string"
+          },
+          "transportation": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "description": "Source URLs backing the itinerary recommendations",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "snippet": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "tips": {
+      "type": "array",
+      "description": "Practical travel tips",
+      "items": {
+        "type": "string"
+      }
+    },
+    "cover_image_url": {
+      "type": "string",
+      "description": "A representative image URL for the destination"
+    }
+  },
+  "required": [
+    "query",
+    "destination",
+    "title",
+    "summary",
+    "duration_days",
+    "days"
+  ]
+}

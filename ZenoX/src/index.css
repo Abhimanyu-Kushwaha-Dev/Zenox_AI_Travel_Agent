@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 97%;
+    --foreground: 210 20% 14%;
+    --card: 0 0% 100%;
+    --card-foreground: 210 20% 14%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 20% 14%;
+    --primary: 174 42% 22%;
+    --primary-foreground: 40 33% 97%;
+    --secondary: 40 20% 94%;
+    --secondary-foreground: 210 20% 14%;
+    --muted: 40 18% 95%;
+    --muted-foreground: 210 10% 42%;
+    --accent: 18 70% 50%;
+    --accent-foreground: 40 33% 97%;
+    --destructive: 0 72% 48%;
+    --destructive-foreground: 40 33% 97%;
+    --border: 40 18% 90%;
+    --input: 40 18% 90%;
+    --ring: 174 42% 22%;
+    --chart-1: 174 42% 28%;
+    --chart-2: 18 70% 55%;
+    --chart-3: 88 30% 45%;
+    --chart-4: 43 60% 58%;
+    --chart-5: 280 40% 55%;
+    --radius: 1rem;
+    --font-heading: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Fraunces', ui-serif, Georgia, serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --sidebar-background: 40 33% 97%;
+    --sidebar-foreground: 210 20% 14%;
+    --sidebar-primary: 174 42% 22%;
+    --sidebar-primary-foreground: 40 33% 97%;
+    --sidebar-accent: 40 20% 94%;
+    --sidebar-accent-foreground: 210 20% 14%;
+    --sidebar-border: 40 18% 90%;
+    --sidebar-ring: 174 42% 22%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  ::selection {
+    background: hsl(var(--accent) / 0.25);
+  }
+}
